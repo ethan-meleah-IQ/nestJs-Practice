@@ -1,0 +1,33 @@
+<div class="biography">
+    <h3> {{exampleChar?.name}} </h3>
+    <p> A level {{exampleChar?.level}} {{exampleChar?.charClass}} </p>
+</div>
+<div>
+    <table>
+        <tr>
+            <td>{{exampleChar?.strength}} | <span class="bold"> {{mods[0]}} </span></td>
+            <td>{{exampleChar?.dexterity}} | <span class="bold"> {{mods[1]}} </span></td>
+            <td>{{exampleChar?.constitution}} | <span class="bold"> {{mods[2]}} </span></td>
+            <td>{{exampleChar?.wisdom}} | <span class="bold"> {{mods[3]}} </span></td>
+            <td>{{exampleChar?.intelligence}} | <span class="bold"> {{mods[4]}} </span></td>
+            <td>{{exampleChar?.charisma}} | <span class="bold"> {{mods[5]}} </span></td>
+        </tr>
+        <tr>
+            <td><button (click)="rollStr()">Strength</button></td>
+            <td><button (click)="rollDex()">Dexterity</button></td>
+            <td><button (click)="rollCon()">Constitution</button></td>
+            <td><button (click)="rollWis()">Wisdom</button></td>
+            <td><button (click)="rollInt()">Intelligence</button></td>
+            <td><button (click)="rollCha()">Charisma</button></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <p class="lastRoll" *ngIf="history"> You just rolled a <span class="bold"> {{this.lastRoll}} </span> </p>
+
+    <p class="historyTitle"> Roll History: </p>
+    <li *ngFor="let roll of history">
+        <p>{{roll}}</p>
+    </li>
+    <button (click)="clearRolls()"> Clear Rolls</button>
+</div>

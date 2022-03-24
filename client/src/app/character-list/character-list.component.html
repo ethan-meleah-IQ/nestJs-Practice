@@ -1,0 +1,10 @@
+<div class="characterListBlock" *ngFor="let character of CHARS">
+    <div class="characterListBio">
+        <p> {{character.name}} </p>
+        <p> Level {{character.level}} {{character.charClass}}</p>
+        <p> {{character.background}} </p>
+        <!-- <button routerLink="/">Begin!</button> -->
+        <button routerLink="/characters/{{character.name}}"> Select </button>
+    </div>
+</div>
+
